@@ -1,0 +1,56 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header colr_mod">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Desasociar  Vehículo</h1>
+        <button
+        type="button"
+        class="styl_bclo"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      >
+      <i class="bi bi-x-lg close_color"></i>
+      </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div
+          *ngFor="let list of this.servicioData.dataListDe"
+          >
+          <div class="input-group mb-3"
+          >
+            <div class="input-group-text">
+              <input
+                class="form-check-input mt-0"
+                type="checkbox"
+                value=""
+                aria-label="Checkbox for following text input"
+                (change)="onCategoriaPressed(list,true)"
+              />
+            </div>
+            <div
+              class="row"
+              type="text form-control"
+              aria-label="Text input with checkbox"
+
+            >
+              <div class="col-4"><p>Placa:{{list.placa}}</p></div>
+              <div class="col-4"><p>Modelos:{{list.modelo}}</p></div>
+              <div class="col-4"><p>Capacidad:{{list.capacidad}} </p></div>
+            </div>
+          </div>
+        </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+          <i class="bi bi-door-closed hov"></i>
+
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-outline-success" (click)="onSumnit()">
+          <i class="bi bi-arrow-through-heart hov"></i>
+          Desvincular</button>
+      </div>
+    </div>
+  </div>

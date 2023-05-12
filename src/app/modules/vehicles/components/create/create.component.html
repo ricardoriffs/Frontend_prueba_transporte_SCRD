@@ -1,0 +1,79 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <form [formGroup]="checkoutForm" name="crearEventoForm()" (ngSubmit)="createEvento(checkoutForm.value)">
+    <div class="modal-header colr_mod">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Crear Vehículos</h1>
+      <button
+        type="button"
+        class="styl_bclo"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      >
+      <i class="bi bi-x-lg close_color"></i>
+    </button>
+    </div>
+    <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Placa *</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            formControlName="placa"
+            id="placa"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Modelo *</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            formControlName="modelo"
+            id="modelo"
+            name="modelo"
+            required
+          />
+          <div
+          *ngIf="modelo?.invalid && (modelo?.dirty || modelo?.touched)"
+          class="alert alert-danger"
+          >
+          <div *ngIf="modelo?.errors?.['required']">
+            Name is required.
+          </div>
+        </div>
+
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Capacidad *</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-default"
+            formControlName="capacidad"
+            id="capacidad"
+            name="capacidad"
+          />
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+        <i class="bi bi-door-closed hov"></i>
+        Cerrar
+      </button>
+      <button type="button" class="btn btn-outline-success" type="submit">
+        <i class="bi bi-save hov"></i>
+        Crear</button>
+    </div>
+  </form>
+  </div>
+</div>
